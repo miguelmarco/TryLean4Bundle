@@ -76,11 +76,8 @@ jobs:
 
       - name: showFiles
         run: cmd /c "dir"
-        
-      - name: Release for Windows
-        uses: "marvinpinto/action-automatic-releases@latest"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: true
-          files: TryLean4Bundle*.exe
+          files: TryLean4Bundle.exe
